@@ -131,6 +131,11 @@ class _DataGridScreenState extends State<DataGridScreen> {
               ? SfDataGrid(
             //allowSorting: true,
                   //allowMultiColumnSorting: false,
+            allowSorting: true,
+                  allowFiltering: true,
+                  columnWidthMode: ColumnWidthMode.fill,
+
+
                   allowSwiping: true,
                   swipeMaxOffset: 100.0,
                   source: _employeeDataSource as EmployeeDataSource,
@@ -192,35 +197,21 @@ class _DataGridScreenState extends State<DataGridScreen> {
                   onCellTap: (DataGridCellTapDetails details) {
                     final rowIndex = (details.rowColumnIndex.rowIndex);
 
-                    //MY WORLD OF HURT
-
-                     // if (_employeeDataSource != null && rowIndex >= 0 && rowIndex < _employeeDataSource!.dataGridRows.length) {
-                     //   final dataGridRow = _employeeDataSource!
-                     //       .dataGridRows[rowIndex - 1];
-                     //   final id = dataGridRow
-                     //       .getCells()
-                     //       .firstWhere((cell) => cell.columnName == 'id')
-                     //       .value;
-                     //   final name = dataGridRow
-                     //       .getCells()
-                     //       .firstWhere((cell) => cell.columnName == 'name')
-                     //       .value;
-                     //   //   final designation = dataGridRow.getCells().firstWhere((cell) => cell.columnName == 'designation').value;
-                     //   //   final salary = dataGridRow.getCells().firstWhere((cell) => cell.columnName == 'salary').value;
-                     //   //
-                     //   print('ID: $id');
-                     //   print('Name: $name');
-                     //   //   print('Designation: $designation');
-                     //   //   print('Salary: $salary');
-                     //   print(_employeeDataSource!.dataGridRows.length);
-                     //}
-
-
-
 
                     if (rowIndex > 0) {
-                      final theEmployee = _employees[rowIndex - 1];
-                      //final theEmployee = _employeeDataSource!.dataGridRows[rowIndex -1];
+                      // To get the effective row of the sorted and filtered collection,
+                      // You can get the actual row by fetching row at the row index
+                      // from the effectiveRows collection.
+                      DataGridRow? effctiveRow =
+                      _employeeDataSource?.effectiveRows.elementAt(rowIndex - 1);
+
+                      // To get actual index of the row from the rows collection.
+                      int? actualRowIndex =
+                      _employeeDataSource?.dataGridRows.indexOf(effctiveRow!);
+
+                      // To get the employee data based on actual index
+                      // from the underlying collection.
+                      final theEmployee = _employees[actualRowIndex!.toInt()];
 
 
                       Navigator.push(

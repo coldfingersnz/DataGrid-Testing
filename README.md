@@ -11,14 +11,14 @@ I'm new at this so no laughing! :-)
 - Show data from database table
 - Add a record
 - Delete a record
-
-## What Dosn't Work
-
 - Filtering
-
-    Filtering on screen works but selecting the record returns an incorrect record
-
 - Sorting
-  
-  Sorting on screen works but selecting the record returns an incorrect record
+
+## What's Not Right
+
+- The code is doubling up all over the place
+- I am casting far to much
+- I still don't understand how to make Provider work for me in here properly.
+
+
   
