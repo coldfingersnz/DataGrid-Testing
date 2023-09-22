@@ -15,7 +15,10 @@ I'm new at this so no laughing! :-)
 ## What Dosn't Work
 
 - Filtering
+
     Filtering on screen works but selecting the record returns an incorrect record
-  - Sorting
-  Filtering on screen works but selecting the record returns an incorrect record
+
+- Sorting
+  
+  Sorting on screen works but selecting the record returns an incorrect record
   
