@@ -1,16 +1,21 @@
-# dgtesting
+# DGTesting
 
-Testing CRUD on DRIFT with Datagrid
+I have knocked up this app to help me understand how to make Syncfusion Datagrid work 
+with the DRIFT database and PROVIDER.
 
-## Getting Started
+I'm new at this so no laughing! :-)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## What Works
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Show data from database table
+- Add a record
+- Delete a record
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## What Dosn't Work
+
+- Filtering
+    Filtering on screen works but selecting the record returns an incorrect record
+  - Sorting
+  Filtering on screen works but selecting the record returns an incorrect record
+  
